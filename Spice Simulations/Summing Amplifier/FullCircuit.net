@@ -1,0 +1,16 @@
+* C:\Users\elias\OneDrive\Desktop\Analog AI\Spice Simulations\Summing Amplifier\FullCircuit.asc
+R1 input N001 2k tol=1
+R2 input N003 5k tol=1
+V1 N001 0 0.1
+V2 N003 0 0.2
+R4 Intermediate input 1k tol=1
+V4 +V 0 2.5
+V5 0 -V 2.5
+XU1 0 input +V -V Intermediate AD8538
+XU2 0 N002 +V -V output AD8538
+R3 N002 Intermediate 1k tol=1
+R5 output N002 10k tol=1
+.tran 10ms startup
+.lib ADI.lib
+.backanno
+.end
